@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var app = express_1.default();
 var mongoose = require('./db_config');
-var marketValue = require("./routes/marketValue");
-var specs = require("./routes/specs");
+var routes_1 = require("./routes");
 var errorHandler_1 = require("./errors/errorHandler");
-app.use("/marketvalue", marketValue);
-app.use("/specs", specs);
+app.use("/marketvalue", routes_1.marketValue);
+app.use("/specs", routes_1.specs);
+app.use("/history", routes_1.history);
 app.all("*", function (req, res) {
     res.send("route not found");
 });

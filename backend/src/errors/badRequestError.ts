@@ -9,7 +9,7 @@ constructor(public message: string){
 }
 
 errorMessage(){
-    return [{message:"BadRequestError"}]
+    return [{message:this.message, statusCode:this.statusCode}]
 }
 
 }

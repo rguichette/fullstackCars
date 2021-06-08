@@ -6,15 +6,15 @@ import express,{Request, Response} from 'express'
 const app = express();
 const mongoose = require('./db_config')
 
-const marketValue = require("./routes/marketValue");
-const specs = require("./routes/specs")
+import { specs, history, marketValue} from './routes'
 
-import {getImages, getMarketVal} from "./external_api"
+import {getImages, getMarketVal} from "./utils/external_api"
 import {errorHandler} from './errors/errorHandler'
 
 
 app.use("/marketvalue", marketValue);
 app.use("/specs", specs);
+app.use("/history", history)
 
 app.all("*", (req,res)=>{
     res.send("route not found");

@@ -15,12 +15,28 @@ export const getHistory = function (){
 
 }
 
+
+
 export const getMarketVal = function (vin: string){
 // api + key
 const URI = BASE_URI +`/marketvalue?key=${API_KEY}&vin=${vin}&format=json`;
-_fetch(URI).then((data:any)=>{
+return _fetch(URI).then((data:any)=>{
     return data.json()
-}).then((data:any)=>data)
+}).then((data:any)=>{
+    return data
+})
 }
+
+export const getSpecs = function (vin: string){
+    const URI = BASE_URI +`/specs?key=${API_KEY}&vin=${vin}&format=json`;
+return _fetch(URI).then((data:any)=>{
+    return data.json()
+}).then((data:any)=>{
+    return data
+})
+}
+
+
+
 
 

@@ -1,13 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = __importDefault(require("express"));
-var app = express_1.default();
-app.get('/', function (req, res) {
-    res.send("ready to go!");
-});
-app.listen(3080, function () {
-    console.log("ready and listening");
-});
+exports.history = exports.specs = exports.marketValue = void 0;
+exports.marketValue = require("./marketValue");
+exports.specs = require("./specs");
+exports.history = require("./history");

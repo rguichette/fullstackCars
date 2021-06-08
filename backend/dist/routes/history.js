@@ -47,11 +47,7 @@ router.get('/', checkVin_1.checkVin, function (req, res, next) { return __awaite
     var vin;
     return __generator(this, function (_a) {
         vin = req.query.vin;
-        //    console.log(vin)
-        // const response = await getMarketVal(vin)
-        // console.log(response);
-        // res.send(response)
-        res.send("checking market value");
+        res.send("cheching vin");
         return [2 /*return*/];
     });
 }); });

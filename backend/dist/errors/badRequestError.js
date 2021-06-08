@@ -27,7 +27,7 @@ var BadRequestError = /** @class */ (function (_super) {
         return _this;
     }
     BadRequestError.prototype.errorMessage = function () {
-        return [{ message: "BadRequestError" }];
+        return [{ message: this.message, statusCode: this.statusCode }];
     };
     return BadRequestError;
 }(customError_1.CustomError));
